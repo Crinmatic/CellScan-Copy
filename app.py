@@ -9,8 +9,7 @@ import re
 # Flask utils
 import flask
 from flask import Flask, redirect, url_for, request, render_template
-from werkzeug.utils import secure_filename
-from gevent.wsgi import WSGIServer
+
 
 # Define a flask app
 app = Flask(__name__)
