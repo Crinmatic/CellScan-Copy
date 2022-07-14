@@ -10,6 +10,7 @@ import re
 # Flask utils
 import flask
 from flask import Flask, redirect, url_for, request, render_template
+from flask_cors import CORS, cross_origin
 
 
 # Define a flask app
