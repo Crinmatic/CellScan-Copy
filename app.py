@@ -31,6 +31,7 @@ def index():
 
     
 
+app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP], server=app)
     #this section is used by gunicorn to serve the app on Heroku
 if __name__ == '__main__':
 
