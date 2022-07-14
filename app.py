@@ -5,19 +5,6 @@ import glob
 import re
 
 
-def application(environ, start_response):
-  if environ['REQUEST_METHOD'] == 'OPTIONS':
-    start_response(
-      '200 OK',
-      [
-        ('Content-Type', 'application/json'),
-        ('Access-Control-Allow-Origin', '*'),
-        ('Access-Control-Allow-Headers', 'Authorization, Content-Type'),
-        ('Access-Control-Allow-Methods', 'POST'),
-      ]
-    )
-    return ''
-
 
 
 # Flask utils
@@ -27,7 +14,7 @@ from flask import Flask, redirect, url_for, request, render_template
 
 # Define a flask app
 app = Flask(__name__)
-
+CORS(app, support_credentials=True)
 
 
 
@@ -36,6 +23,7 @@ app = Flask(__name__)
 
 
 @app.route('/', methods=['GET'])
+@cross_origin(supports_credentials=True)
 def index():
     # Main page
     return render_template('index.html')
